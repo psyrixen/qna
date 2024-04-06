@@ -65,4 +65,4 @@ if 'py' not in st.session_state['current_qsn']:
 
     st.button('Next Question',on_click=show_next_question)
 
-    st.write(st.session_state['disp_qsns'])
+    
