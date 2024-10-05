@@ -42,7 +42,7 @@ if st.session_state['next_qsn']==1:
 
 
 if 'py' not in st.session_state['current_qsn']:
-    st.markdown(f"<center>Total correct till now : {st.session_state['correct_answers']}/{len(st.session_state['disp_qsns']}</center>",allow_unsafe_html=True)
+    st.markdown(f"<center>Total correct till now : {st.session_state['correct_answers']}/{len(st.session_state['disp_qsns'])}</center>",allow_unsafe_html=True)
     st.header('Question : ')
     image_file = Image.open(st.session_state['current_qsn'])
     image_file = image_file.convert('1')
