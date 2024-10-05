@@ -10,9 +10,12 @@ def show_next_question():
 
 if 'disp_qsns' not in st.session_state:
     st.session_state['disp_qsns']=[]
-
+if 'correct_answers' not in st.session_state:
+    st.session_state['correct_answers']=0
+    
 if list(set(st.session_state['disp_qsns']))==list(set(qsns)):
     st.success('You have attempted all questions. No more questions left. Please reload the browser window to restart the test')
+    st.success(f'Correct answers : {st.session_state['correct_answers']}') 
     st.stop()
 
 if 'first_qsn' not in st.session_state:
@@ -59,6 +62,7 @@ if 'py' not in st.session_state['current_qsn']:
         correct_answers=[i.strip() for i in st.session_state['current_qsn'].strip().split('_')[1].strip().split('.')[0]]
         if list(set(correct_answers))==list(set(selected_answers)):
             st.success('Your Answer is Correct')
+            st.session_state['correct_answers']=st.session_state['correct_answers']+1
         else:
             st.error(f'Your selected answer is not correct. The correct answers are : {",".join(correct_answers)}')
     
