@@ -7,6 +7,11 @@ qsns=os.listdir()
 
 def show_next_question():
     st.session_state['next_qsn']=1
+    st.session_state['A']=False
+    st.session_state['B']=False
+    st.session_state['C']=False
+    st.session_state['D']=False
+    st.session_state['E']=False
 
 if 'disp_qsns' not in st.session_state:
     st.session_state['disp_qsns']=[]
@@ -49,15 +54,15 @@ if 'py' not in st.session_state['current_qsn']:
     st.image(image_file)
     selected_answers=[]
     st.subheader('Choose an answer : ')
-    if st.checkbox('A',value=False):
+    if st.checkbox('A'):
         selected_answers.append('A')
-    if st.checkbox('B',value=False):
+    if st.checkbox('B'):
         selected_answers.append('B')
-    if st.checkbox('C',value=False):
+    if st.checkbox('C'):
         selected_answers.append('C')
-    if st.checkbox('D',value=False):
+    if st.checkbox('D'):
         selected_answers.append('D')
-    if st.checkbox('E',value=False):
+    if st.checkbox('E'):
         selected_answers.append('E')
     if st.button('Submit'):
         correct_answers=[i.strip() for i in st.session_state['current_qsn'].strip().split('_')[1].strip().split('.')[0]]
