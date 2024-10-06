@@ -49,15 +49,15 @@ if 'py' not in st.session_state['current_qsn']:
     st.image(image_file)
     selected_answers=[]
     st.subheader('Choose an answer : ')
-    if st.checkbox('A'):
+    if st.checkbox('A',value=False):
         selected_answers.append('A')
-    if st.checkbox('B'):
+    if st.checkbox('B',value=False):
         selected_answers.append('B')
-    if st.checkbox('C'):
+    if st.checkbox('C',value=False):
         selected_answers.append('C')
-    if st.checkbox('D'):
+    if st.checkbox('D',value=False):
         selected_answers.append('D')
-    if st.checkbox('E'):
+    if st.checkbox('E',value=False):
         selected_answers.append('E')
     if st.button('Submit'):
         correct_answers=[i.strip() for i in st.session_state['current_qsn'].strip().split('_')[1].strip().split('.')[0]]
